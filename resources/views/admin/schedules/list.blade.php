@@ -23,14 +23,14 @@ padding-left: 5px;
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>@lang('lang.schedule')</h6>
+                    <h6>QUẢN LÝ LỊCH CHIẾU</h6>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <form action="admin/schedule" method="get">
                         <div class="row container">
                             <div class="col-5">
                                 <div class="input-group">
-                                    <span class="input-group-text bg-gray-200"> @lang('lang.theater')</span>
+                                    <span class="input-group-text bg-gray-200">Rạp</span>
                                     <select id="theater" class="form-select ps-2" name="theater" aria-label="">
                                         @foreach($theaters as $theater)
                                         <option value="{{ $theater->id }}" @if($theater==$theater_cur) selected @endif>
@@ -42,12 +42,12 @@ padding-left: 5px;
                             </div>
                             <div class="col-5">
                                 <div class="input-group">
-                                    <span class="input-group-text bg-gray-200"> @lang('lang.show_date')</span>
+                                    <span class="input-group-text bg-white-200"> Ngày chiếu</span>
                                     <input name="date" id="date" value="{{ date("Y-m-d",strtotime($date_cur)) }}" aria-label="" class="form-control ps-2" type="text">
                                 </div>
                             </div>
                             <div class="col-2">
-                                <button type="submit" class="btn  bg-gradient-primary">@lang('lang.submit')</button>
+                                <button type="submit" class="btn  bg-gradient-success">Lưu</button>
                             </div>
                         </div>
                     </form>
@@ -60,9 +60,9 @@ padding-left: 5px;
                             </colgroup>
                             <thead class="table-primary">
                                 <tr>
-                                    <th class="text-uppercase font-weight-bolder"> @lang('lang.room')</th>
-                                    <th class="text-uppercase font-weight-bolder"> @lang('lang.room_type')</th>
-                                    <th class="text-uppercase font-weight-bolder"> @lang('lang.seat')</th>
+                                    <th class="text-uppercase font-weight-bolder"> Phòng</th>
+                                    <th class="text-uppercase font-weight-bolder"> Loại phòng</th>
+                                    <th class="text-uppercase font-weight-bolder"> Tổng số ghế</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,10 +90,9 @@ padding-left: 5px;
                                             </colgroup>
                                             <thead>
                                                 <tr>
-                                                    <th class="text-uppercase fw-bold">@lang('lang.time')</th>
-                                                    <th class="text-uppercase fw-bold text-start">@lang('lang.movies')</th>
-                                                    <!-- {{--                                                            <th class="text-uppercase fw-bold">@lang('lang.early_screening')</th>--}} -->
-                                                    <th class="text-uppercase fw-bold">@lang('lang.status')</th>
+                                                    <th class="text-uppercase fw-bold">Thời gian</th>
+                                                    <th class="text-uppercase fw-bold text-start">Tên phim</th>
+                                                    <th class="text-uppercase fw-bold">Trạng thái</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -140,8 +139,8 @@ padding-left: 5px;
                                                 @endforeach
                                                 <tr>
                                                     <td>
-                                                        <button class="btn btn-info btn_add" data-bs-toggle="modal" data-bs-target="#CreateScheduleModal_{{ $room->id }}">
-                                                            <i class="fa-regular fa-circle-plus"></i> @lang('lang.add')
+                                                        <button class="btn btn-success btn_add" data-bs-toggle="modal" data-bs-target="#CreateScheduleModal_{{ $room->id }}">
+                                                            <i class="fa-regular fa-circle-plus"></i> Thêm
                                                         </button>
                                                     </td>
                                                     <td colspan="3">
@@ -150,8 +149,8 @@ padding-left: 5px;
                                                                     $room->id }})">
                                                                 <i class="fa-solid fa-repeat"></i> Thay đổi trạng thái tất cả
                                                             </button>
-                                                            <a href="javascript:void(0);" data-date="{{$date_cur}}" data-theater="{{$theater_cur->id}}" data-room="{{$room->id}}" data-url="{{ url('admin/schedule/deleteall') }}" class="btn btn-dark ms-3 delete_all">
-                                                                <i class="fa-regular fa-trash"></i> Delete all
+                                                            <a href="javascript:void(0);" data-date="{{$date_cur}}" data-theater="{{$theater_cur->id}}" data-room="{{$room->id}}" data-url="{{ url('admin/schedule/deleteall') }}" class="btn btn-danger ms-3 delete_all">
+                                                                <i class="fa-regular fa-trash"></i> Xóa tất cả
                                                             </a>
                                                         </div>
                                                     </td>
@@ -232,7 +231,7 @@ padding-left: 5px;
             var theater_id = $(this).data('theater');
             var room_id = $(this).data('room');
             var date = $(this).data('date');
-            if (confirm("Are you sure you want to remove it?") === true) {
+            if (confirm("Bạn có muốn xóa tất cả lịch chiếu không?") === true) {
                 $.ajax({
                     url: userURL,
                     type: 'GET',

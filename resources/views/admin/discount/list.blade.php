@@ -6,34 +6,22 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>@lang('lang.discount')</h6>
+                            <h6>Danh sách mã khuyến mãi</h6>
                         </div>
-                        @if(count($errors)>0)
-                            <div class="alert alert-warning">
-                                @foreach($errors->all() as $arr)
-                                    {{$arr}}<br>
-                                @endforeach
-                            </div>
-                        @endif
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 <a style="float:right;padding-right:30px;" class="text-light">
-                                    <button class=" btn bg-gradient-info float-right mb-3" data-bs-toggle="modal" data-bs-target="#discount">@lang('lang.create')
+                                    <button class=" btn bg-gradient-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#discount">Thêm
                                     </button>
                                 </a>
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.name')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.code')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.percent')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.quantity')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Tên khuyến mãi</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Mã khuyến mãi</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Phần trăm</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Số lượng</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Trạng thái</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                     </tr>
@@ -65,7 +53,7 @@
                                                 @endif
                                             </td>
                                             <td class="align-middle">
-                                                <a href="#editDiscount" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                <a href="#editDiscount" class="text-success font-weight-bold text-xs" data-toggle="tooltip"
                                                    data-original-title="Edit discount" data-bs-target="#editDiscount{!! $value['id'] !!}"
                                                    data-bs-toggle="modal">
                                                     <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -73,7 +61,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <a href="javascript:void(0)" data-url="{{ url('admin/discount/delete', $value['id'] ) }}"
-                                                   class="text-secondary font-weight-bold text-xs delete-discount" data-toggle="tooltip">
+                                                   class="text-danger font-weight-bold text-xs delete-discount" data-toggle="tooltip">
                                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                                 </a>
                                             </td>
@@ -107,7 +95,7 @@
             $('.delete-discount').on('click', function () {
                 var userURL = $(this).data('url');
                 var trObj = $(this);
-                if (confirm("Are you sure you want to remove it?") === true) {
+                if (confirm("Bạn có chắc chắn muốn xóa mã khuyến mãi này không?") === true) {
                     $.ajax({
                         url: userURL,
                         type: 'DELETE',

@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="combo_title">Combo</h5>
+                <h5 class="modal-title" id="combo_title">Chỉnh sửa thông tin Combo</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="admin/combo/edit/{{$combo->id}}" method="POST" enctype="multipart/form-data">
@@ -12,22 +12,22 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="name_{{$combo->id}}">@lang('lang.name')</label>
+                                    <label for="name_{{$combo->id}}">Tên combo</label>
                                     <input id="name_{{$combo->id}}" class="form-control" type="text" value="{{ $combo->name }}" name="name"
                                            autocomplete="off"
-                                           placeholder="@lang('lang.type') @lang('lang.name')" aria-label="">
+                                           placeholder="Nhập tên combo" aria-label="">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="price_{{$combo->id}}">@lang('lang.price')</label>
+                                    <label for="price_{{$combo->id}}">Giá</label>
                                     <input id="price_{{$combo->id}}" class="form-control" type="number" name="price" value="{{ $combo->price }}"
-                                           placeholder="@lang('lang.type') @lang('lang.price')" aria-label="">
+                                           placeholder="Nhập giá..." aria-label="">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group file-uploader">
-                                    <label for="img_{{$combo->id}}">@lang('lang.image')</label>
+                                    <label for="img_{{$combo->id}}">Ảnh minh họa</label>
                                     <input id="img_{{$combo->id}}" type='file' name='Image' class="form-control image-combo">
                                     @if(strstr($combo->image,"https") == "")
                                         <img style="width: 100px" alt="..." class="img-thumbnail"
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="col-12 food_group">
-                                <span class="form-label">Foods</span>
+                                <span class="form-label">Đồ ăn</span>
                                 @foreach($combo->foods as $foodOfCombo)
                                     <div class="input-group m-1">
                                         <span class="input-group-text text-black-50">@lang('lang.food'): </span>
@@ -58,14 +58,14 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <button type="button" class="btn m-1 btn-primary add_food">ADD FOOD</button>
+                            <button type="button" class="btn m-1 btn-primary add_food">Thêm đồ ăn</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                    <button type="submit" class="btn btn-primary">@lang('lang.save')</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-success">Lưu</button>
                 </div>
             </form>
         </div>

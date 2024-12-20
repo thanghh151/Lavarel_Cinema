@@ -6,23 +6,23 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>@lang('lang.ticket')</h6>
+                            <h6>QUẢN LÝ VÉ</h6>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.movie_name')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.format')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.room')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.seat')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Combo</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.time')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.date')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.barcode')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.receivedCombo')</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Tên phim</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Loại phòng</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Phòng</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Ghế</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Combo</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Thời gian bắt đầu</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Ngày</th>
+                                        <th class="text-center text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Mã QR</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Trạng thái vé</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Trạng thái Combo</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                     </tr>
                                     </thead>
@@ -31,7 +31,7 @@
                                     <tr>
                                         <td class="align-middle text-center">
                                             @isset($value['schedule'])
-                                            <h6 class="mb-0 text-sm " style="width:150px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical">{!! $value['schedule']['movie']['name'] !!}</h6>
+                                            <h6 class="mb-0 text-sm " style="width:300px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical">{!! $value['schedule']['movie']['name'] !!}</h6>
                                             @endisset
                                         </td>
                                         <td class="align-middle text-center">

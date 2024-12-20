@@ -3,12 +3,43 @@
     active
 @endsection
 @section('content')
+
+<style>
+
+    .card {
+        border: 1px solid #72be43;
+        border-radius: 0.5rem;
+        background-color: #ffffff;
+        color: #72be43;
+        }
+
+    .card-body {
+        background-color: #ffffff; 
+        }
+
+    .card a {
+            color: #72be43;
+        }
+
+    .card-title {
+            color: #72be43;
+            font-weight: bold;
+        }
+
+    .card-text {
+            color: #000000;
+        }
+
+    .card .badge {
+            color: #ffffff;
+        }
+</style>
     <section class="container-lg clearfix">
         <!-- Main content -->
         <div class="mt-5" id="Movies">
             <ul class="nav justify-content-start mb-4 align-items-center">
                 <li class="nav-item">
-                    <button class="h5 nav-link link-warning active fw-bold border-bottom border-2 border-warning"
+                    <button class="h5 nav-link link-success active fw-bold border-bottom border-2 border-success"
                             aria-expanded="true"
                             data-bs-toggle="collapse"
                             data-bs-target="#phimdangchieu" disabled>
@@ -32,67 +63,7 @@
                         @lang('lang.pre_sale')
                     </button>
                 </li>
-
-                <button class="btn" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <i class="fa-solid fa-filter"></i> @lang('lang.sort_by')
-                </button>
             </ul>
-
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                 aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasRightLabel">@lang('lang.sort_by')</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <form action="/movies/filter" method="get">
-                        @csrf
-                        <div class="form-group m-2 mb-3">
-                            <label for="cast" class="form-label">@lang('lang.casts')</label>
-                            <select id="cast" class="form-control cast-input" name="casts[]" multiple>
-                                @foreach($casts as $cast)
-                                    <option value="{{ $cast->id }}">{{ $cast->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="form-group m-2 mb-3">
-                            <label for="director" class="form-control-label">@lang('lang.directors')</label>
-                            <select id="director" class="form-control director-input" name="directors[]" multiple>
-                                @foreach($directors as $director)
-                                    <option value="{{ $director->id }}">{{ $director->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="m-2 form-group mb-3">
-                            <label class="form-label" for="movieGenres">@lang('lang.genre')</label>
-                            <select id="movieGenres" class="form-control director-input" name="movieGenres[]" multiple>
-                                @foreach($movieGenres->where('status',1) as $movieGenre)
-                                    <option value="{{ $movieGenre->id }}">{{ $movieGenre->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="m-2 form-group mb-3">
-                            <label class="form-label" for="rating">@lang('lang.rated')</label>
-                            <select id="rating" class="form-select" name="rating">
-                                <option value="" selected>@lang('lang.all')</option>
-                                @foreach($rating as $value)
-                                    <option value="{{ $value->id }}"
-                                            title="{{ $value->description }}">
-                                        {{ $value->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary m-2 mt-4 w-100">@lang('lang.submit')</button>
-                    </form>
-                </div>
-            </div>
 
             <div id="phimsapchieu" class="row g-4 mt-2 row-cols-1 row-cols-md-2 collapse" data-bs-parent="#Movies">
                 @foreach($moviesSoon as $movie)
@@ -326,8 +297,8 @@
             });
 
             $("#Movies .nav .nav-item .nav-link").on("click", function () {
-                $("#Movies .nav-item").find(".active").removeClass("active link-warning fw-bold border-bottom border-2 border-warning").addClass("link-secondary").prop('disabled', false);
-                $(this).addClass("active link-warning fw-bold border-bottom border-2 border-warning").removeClass("link-secondary").prop('disabled', true);
+                $("#Movies .nav-item").find(".active").removeClass("active link-success fw-bold border-bottom border-2 border-success").addClass("link-secondary").prop('disabled', false);
+                $(this).addClass("active link-success fw-bold border-bottom border-2 border-success").removeClass("link-secondary").prop('disabled', true);
             });
         });
     </script>

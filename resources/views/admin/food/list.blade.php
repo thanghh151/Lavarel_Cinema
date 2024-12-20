@@ -6,21 +6,21 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>@lang('lang.food')</h6>
+                            <h6>QUẢN LÝ ĐỒ ĂN</h6>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 <a style="float:right;padding-right:30px;" class="text-light">
-                                    <button class=" btn btn-primary float-right mb-3" data-bs-toggle="modal" data-bs-target="#food">@lang('lang.create')
+                                    <button class=" btn btn-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#food">Thêm
                                     </button>
                                 </a>
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.name')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.image')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.price')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Tên đồ ăn</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Ảnh minh họa</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Giá</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Trạng thái</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                     </tr>
@@ -33,11 +33,11 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 @if(strstr($value['image'],"https") == "")
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $value['image'] !!}.jpg"
                                                          alt="user1">
                                                 @else
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="{!! $value['image'] !!}" alt="user1">
                                                 @endif
                                             </td>
@@ -56,7 +56,7 @@
                                                 @endif
                                             </td>
                                             <td class="align-middle">
-                                                <a href="#editFood" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                <a href="#editFood" class="text-success font-weight-bold text-xs" data-toggle="tooltip"
                                                    data-original-title="Edit director" data-bs-target="#editFood{!! $value['id'] !!}"
                                                    data-bs-toggle="modal">
                                                     <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -64,7 +64,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <a href="javascript:void(0)" data-url="{{ url('admin/food/delete', $value['id'] ) }}"
-                                                   class="text-secondary font-weight-bold text-xs delete-food" data-toggle="tooltip">
+                                                   class="text-danger font-weight-bold text-xs delete-food" data-toggle="tooltip">
                                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                                 </a>
                                             </td>
@@ -98,7 +98,7 @@
             $('.delete-food').on('click', function () {
                 var userURL = $(this).data('url');
                 var trObj = $(this);
-                if (confirm("Are you sure you want to remove it?") === true) {
+                if (confirm("Bạn có chắc chắn muốn xóa đồ ăn này không?") === true) {
                     $.ajax({
                         url: userURL,
                         type: 'DELETE',

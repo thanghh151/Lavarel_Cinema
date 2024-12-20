@@ -15,7 +15,7 @@
                     <div class="vr mx-2"></div>
                     {{ $room->name }}
                     <div class="vr mx-2"></div>
-                    @lang('lang.add_schedule')
+                    Thêm lịch chiếu
                 </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label class="form-label"> @lang('lang.movies')</label>
+                                <label class="form-label">Tên phim</label>
                                 <select class="form-select" id="address" name="movie" aria-label="">
                                     @foreach($movies as $movie)
                                         <option value="{{ $movie->id }}">{{ $movie->name }}</option>
@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>@lang('lang.audio')</label>
+                                <label>Âm thanh</label>
                                 <select id="city_create" class="form-select" name="audio" aria-label="audio">
                                     @foreach($audios as $audio)
                                         <option value="{{ $audio->id }}">{{ $audio->name }}</option>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label> @lang('lang.subtitle')</label>
+                                <label>Phụ đề</label>
                                 <select class="form-select" name="subtitle" aria-label="subtitle">
                                     @foreach($subtitles as $sub)
                                         <option value="{{ $sub->id }}">{{ $sub->name }}</option>
@@ -91,14 +91,14 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> @lang('lang.close')</button>
-                    <button type="submit" class="btn btn-primary"
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-success"
                             @if(isset($endTime))
                                 @if($endTime> strtotime('22:00'))
                                     disabled
                         @endif
                         @endif
-                    >@lang('lang.save')</button>
+                    >Lưu</button>
                 </div>
             </form>
         </div>

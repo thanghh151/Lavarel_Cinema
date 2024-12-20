@@ -58,7 +58,7 @@ class BannerController extends Controller
             $request['image'] = $cloud;
         }
         $banners->update($request->all());
-        return redirect('admin/banners')->with('success', 'Updated Successfully!');
+        return redirect('admin/banners')->with('success', 'Cập nhật thành công!');
     }
 
     public function delete($id)
@@ -66,7 +66,7 @@ class BannerController extends Controller
         $banners = Banner::find($id);
         Cloudinary::destroy($banners['image']);
         $banners->delete();
-        return response()->json(['success' => 'Delete Successfully']);
+        return response()->json(['success' => 'Xóa thành công!']);
     }
     public function status(Request $request){
         $banners = Banner::find($request->banner_id);

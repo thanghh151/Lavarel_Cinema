@@ -6,23 +6,23 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>Combo</h6>
+                            <h6>Combo đồ ăn</h6>
+                            <a style="float:right;padding-right:30px;" class="text-light">
+                                <button class=" btn btn-success float-right mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#combo">Thêm
+                                </button>
+                            </a>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                <a style="float:right;padding-right:30px;" class="text-light">
-                                    <button class=" btn btn-primary float-right mb-3" data-bs-toggle="modal"
-                                            data-bs-target="#combo">@lang('lang.create')
-                                    </button>
-                                </a>
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.name')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.image')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Chi tiết</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.price')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Tên Combo</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Ảnh minh họa</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Chi tiết combo</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Giá</th>
+                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Trạng thái</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                     </tr>
@@ -35,11 +35,11 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 @if(strstr($combo->image,"https") == "")
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{{$combo->image}}.jpg"
                                                          alt="user1">
                                                 @else
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="{!! $combo->image !!}" alt="user1">
                                                 @endif
                                             </td>
@@ -63,7 +63,7 @@
                                                 @endif
                                             </td>
                                             <td class="align-middle">
-                                                <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                <a class="text-success font-weight-bold text-xs" data-toggle="tooltip"
                                                    data-original-title="Edit combo" data-bs-target="#comboEdit_{{$combo->id}}"
                                                    data-bs-toggle="modal">
                                                     <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -72,7 +72,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <a onclick="deleteCombo({{$combo->id}})"
-                                                   class="text-secondary font-weight-bold text-xs delete_combo">
+                                                   class="text-danger font-weight-bold text-xs delete_combo">
                                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                                 </a>
                                             </td>
@@ -105,7 +105,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                if (confirm("Are you sure you want to remove it?") === true) {
+                if (confirm("Bạn có chắc chắn muốn xóa combo đồ ăn này không") === true) {
                     $.ajax({
                         url: 'admin/combo/delete/' + id,
                         type: 'DELETE',

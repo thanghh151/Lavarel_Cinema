@@ -4,7 +4,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="discount_title">@lang('lang.discount')</h5>
+                    <h5 class="modal-title" id="discount_title">Thêm mới mã khuyến mãi</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -12,29 +12,29 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="code" class="form-control-label">@lang('lang.name')</label>
+                                    <label for="code" class="form-control-label">Tên</label>
                                     <input class="form-control" id="name" type="text" value="" name="name"
-                                           placeholder="@lang('lang.type') @lang('lang.name')">
+                                           placeholder="Nhập tên...">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="code" class="form-control-label">@lang('lang.code')</label>
+                                    <label for="code" class="form-control-label">Mã khuyến mãi</label>
                                     <input class="form-control" id="code" type="text" value="" name="code"
-                                           placeholder="@lang('lang.type') @lang('lang.code')">
+                                           placeholder="Nhập mã khuyến mãi">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="percent" class="form-control-label">@lang('lang.percent')</label>
+                                    <label for="percent" class="form-control-label">Phần trăm</label>
                                     <input class="form-control" id="percent" type="number" value="" name="percent"
-                                           placeholder="@lang('lang.type') @lang('lang.percent')">
+                                           placeholder="Nhập % giảm giá...">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="quantity" class="form-control-label">@lang('lang.quantity')</label>
-                                    <input class="form-control" id="quantity" type="number" value="" name="quantity" placeholder="@lang('lang.type') @lang('lang.quantity')">
+                                    <label for="quantity" class="form-control-label">Số lượng</label>
+                                    <input class="form-control" id="quantity" type="number" value="" name="quantity" placeholder="Nhập số lượng">
                                 </div>
                             </div>
                         </div>
@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                    <button type="submit" class="btn bg-gradient-info">@lang('lang.save')</button>
+                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn bg-gradient-success">Lưu</button>
                 </div>
 
             </div>

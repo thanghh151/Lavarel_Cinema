@@ -495,8 +495,8 @@ class AdminController extends Controller
                 'password' => 'required'
             ],
             [
-                'email.required' => 'Please enter your email!',
-                'password.required' => 'Please enter your password!'
+                'email.required' => 'Yêu cầu nhập email!',
+                'password.required' => 'Yêu cầu nhập mật khẩu!'
             ]
         );
         if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {

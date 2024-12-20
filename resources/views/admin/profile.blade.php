@@ -45,8 +45,8 @@
                           <div class="card">
                             <div class="card-header pb-0">
                               <div class="d-flex align-items-center">
-                                <p class="mb-0">@lang('lang.edit') @lang('lang.profile')</p>
-                                <button class="ms-auto">@lang('lang.submit')</button>
+                                <p class="mb-0">Chỉnh sửa tài khoản</p>
+                                <button class="ms-auto">Lưu</button>
                               </div>
                             </div>
                             <div class="card-body">

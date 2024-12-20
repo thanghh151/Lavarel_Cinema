@@ -7,28 +7,28 @@
                     <div class="card mb-4">
                         <div class="card-header pb-0">
                             <h6>
-                                @lang('lang.user_account')
-                                <label for="search">
-                                    <input type="text" placeholder="@lang('lang.type') @lang('lang.code') @lang('lang.or') email" class="form-controller" id="search" name="search"/>
-                                </label>
+                                QUẢN LÝ KHÁCH HÀNG
                             </h6>
+                            <label for="search">
+                                <input type="text" placeholder="Nhập mã/email/SĐT..." class="form-controller" id="search" name="search"/>
+                            </label>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.code')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.fullname')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Email</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.phone')</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Mã khách hàng</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Họ tên</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Email</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">SĐT</th>
                                         @role('admin')
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.barcode')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Mã vạch</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Trạng thái</th>
                                         @endrole
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.point')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.created_at')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.updated_at')</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Điểm</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Ngày tạo</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Ngày cập nhật</th>
                                     </tr>
                                     </thead>
                                     <tbody>

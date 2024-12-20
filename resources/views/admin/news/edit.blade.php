@@ -13,13 +13,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.title')</label>
+                                    <label for="example-text-input" class="form-control-label">Tiêu đề</label>
                                     <input class="form-control" type="text" value="{!! $value['title'] !!}" name="title">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group file-uploader">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.image')</label>
+                                    <label for="example-text-input" class="form-control-label">Hình ảnh</label>
                                     <input type='file' name='Image' class="form-control image-news">
                                     @if(strstr($value['image'],"https") == "")
                                         <img style="width: 300px"
@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.content')</label>
+                                    <label for="example-text-input" class="form-control-label">Nội dung</label>
                                     <textarea class="form-control" name="contents" id="editor">{!! $value['content'] !!}</textarea>
                                 </div>
                             </div>
@@ -44,8 +44,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                    <button type="submit" class="btn btn-primary">@lang('lang.save')</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-success">Lưu</button>
                 </div>
 
             </div>

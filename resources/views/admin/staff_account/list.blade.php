@@ -6,33 +6,33 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>@lang('lang.staff_account')</h6>
+                    <h6>QUẢN LÝ NHÂN VIÊN</h6>
+                    <button style="float:right;padding-right:30px;" class="me-5  btn bg-gradient-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#staff">
+                            Thêm
+                    </button>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <button style="float:right;padding-right:30px;" class="me-5  btn bg-gradient-primary float-right mb-3" data-bs-toggle="modal" data-bs-target="#staff">
-                            Create
-                        </button>
                         <table class="table align-items-center mb-0 ">
                             <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
-                                        @lang('lang.fullname')
+                                        Tên nhân viên
                                     </th>
                                     <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
                                         Email
                                     </th>
                                     <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
-                                        @lang('lang.phone')
+                                        SĐT
                                     </th>
                                     <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
-                                        @lang('lang.role')
+                                        Vai trò
                                     </th>
                                     <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">
-                                        @lang('lang.permissions')
+                                        Phân quyền
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        @lang('lang.status')
+                                        Trạng thái
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                 </tr>
@@ -56,7 +56,7 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         <button href="#permission" class="btn btn-link text-danger " data-bs-toggle="modal" data-bs-target="#permission{!! $value['id'] !!}">
-                                            @lang('lang.permissions') &nbsp<i style="color:red" class="fa-solid fa-pen-to-square fa-lg"></i>
+                                            Phân quyền &nbsp<i style="color:red" class="fa-solid fa-pen-to-square fa-lg"></i>
                                         </button>
                                     </td>
                                     <td id="status{!! $value['id'] !!}" class="align-middle text-center text-sm ">
@@ -72,7 +72,7 @@
                                     </td>
                                     @hasrole('admin')
                                     <td class="align-middle">
-                                        <a href="javascript:void(0)" data-url="{{ url('admin/staff/delete', $value['id'] ) }}" class="text-secondary font-weight-bold text-xs delete-staff" data-toggle="tooltip" data-original-title="Edit user">
+                                        <a href="javascript:void(0)" data-url="{{ url('admin/staff/delete', $value['id'] ) }}" class="text-danger font-weight-bold text-xs delete-staff" data-toggle="tooltip" data-original-title="Edit user">
                                             <i class="fa-solid fa-trash-can fa-lg"></i>
                                         </a>
                                     </td>
@@ -126,7 +126,7 @@
         $('.delete-staff').on('click', function() {
             var userURL = $(this).data('url');
             var trObj = $(this);
-            if (confirm("Are you sure you want to remove it?") === true) {
+            if (confirm("Bạn có chắc chắn muốn xóa nhân viên này không?") === true) {
                 $.ajax({
                     url: userURL,
                     type: 'DELETE',

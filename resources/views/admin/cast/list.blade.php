@@ -6,21 +6,21 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>@lang('lang.casts')</h6>
+                            <h6>QUẢN LÝ DIỄN VIÊN</h6>
+                            <a style="float:right;padding-right:30px;" class="text-light">
+                                <button class=" btn btn-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#cast">Thêm</button>
+                            </a>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                <a style="float:right;padding-right:30px;" class="text-light">
-                                    <button class=" btn btn-primary float-right mb-3" data-bs-toggle="modal" data-bs-target="#cast">@lang('lang.create')</button>
-                                </a>
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.name')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.image')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.birthday')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.national')</th>
-                                        <th class="text-left text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.content')</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Tên diễn viên</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Hình ảnh</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Ngày sinh</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Quốc gia</th>
+                                        <th class="text-left text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Giới thiệu</th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
                                     </tr>
@@ -33,11 +33,11 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 @if(strstr($value['image'],"https") == "")
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $value['image'] !!}.jpg"
                                                          alt="user1">
                                                 @else
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="{!! $value['image'] !!}" alt="user1">
                                                 @endif
                                             </td>
@@ -52,7 +52,7 @@
                                                       style="width:200px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical">{!! $value['content'] !!}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="#editCast" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                <a href="#editCast" class="text-success font-weight-bold text-xs" data-toggle="tooltip"
                                                    data-original-title="Edit cast" data-bs-target="#editCast{!! $value['id'] !!}"
                                                    data-bs-toggle="modal">
                                                     <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -60,7 +60,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <a href="javascript:void(0)" data-url="{{ url('admin/cast/delete', $value['id'] ) }}"
-                                                   class="text-secondary font-weight-bold text-xs delete-cast" data-toggle="tooltip">
+                                                   class="text-danger font-weight-bold text-xs delete-cast" data-toggle="tooltip">
                                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                                 </a>
                                             </td>
@@ -94,7 +94,7 @@
             $('.delete-cast').on('click', function () {
                 var userURL = $(this).data('url');
                 var trObj = $(this);
-                if (confirm("Are you sure you want to remove it?") == true) {
+                if (confirm("Bạn có chắc chắn muốn xóa thông tin của diễn viên này không?") == true) {
                     $.ajax({
                         url: userURL,
                         type: 'DELETE',

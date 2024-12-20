@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group file-uploader">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.image')</label>
+                                    <label for="example-text-input" class="form-control-label">Hình ảnh</label>
                                     <input type='file' name='Image' class="form-control image-director">
                                     @if(strstr($value['image'],"https") == "")
                                         <img style="width: 300px" class="img_direc"
@@ -29,8 +29,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                    <button type="submit" class="btn btn-primary">@lang('lang.save')</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-success">Lưu</button>
                 </div>
 
             </div>

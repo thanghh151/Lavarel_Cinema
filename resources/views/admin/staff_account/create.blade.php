@@ -4,7 +4,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staff_title">@lang('lang.staff')</h5>
+                    <h5 class="modal-title" id="staff_title">QUẢN LÝ NHÂN VIÊN</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -12,30 +12,30 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>@lang('lang.fullname')</label>
+                                    <label>Họ Tên</label>
                                     <input aria-label="" id="fn" class="form-control" type="text" value="" name="fullName"
-                                           placeholder="@lang('lang.type') @lang('lang.fullname')">
+                                           placeholder="Nhập họ tên...">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input aria-label="" id="e" class="form-control" type="email" value="" name="email"
-                                           placeholder="@lang('lang.type') Email">
+                                           placeholder="Nhập email...">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>@lang('lang.phone')</label>
+                                    <label>SĐT</label>
                                     <input aria-label="" id="p" class="form-control" type="text" value="" name="phone"
-                                           placeholder="@lang('lang.type') @lang('lang.phone')">
+                                           placeholder="Nhập SĐT...">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label>@lang('lang.password')</label>
+                                    <label>Mật khẩu</label>
                                     <input aria-label="" id="rp" class="form-control" type="password" value="" name="password"
-                                           placeholder="@lang('lang.type') @lang('lang.password')">
+                                           placeholder="Nhập mật khẩu...">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -52,8 +52,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                    <button type="submit" class="btn bg-gradient-info">@lang('lang.save')</button>
+                    <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn bg-gradient-success">Lưu</button>
                 </div>
             </div>
         </div>

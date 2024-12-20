@@ -6,25 +6,25 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h6>@lang('lang.events')</h6>
+                            <h6>QUẢN LÝ SỰ KIỆN</h6>
+                            <a style="float:right;padding-right:20px;" class="text-light">
+                                <button class=" btn btn-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#events">@lang('lang.create')</button>
+                            </a>
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
-                                <a style="float:right;padding-right:30px;" class="text-light">
-                                    <button class=" btn btn-primary float-right mb-3" data-bs-toggle="modal" data-bs-target="#events">@lang('lang.create')</button>
-                                </a>
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.title')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7 ">@lang('lang.image')</th>
-                                        <th class="text-left text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.content')</th>
-                                        <th class="text-left text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.conditions')</th>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.time')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.staff')</th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Tiêu đề</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7 ">Hình ảnh</th>
+                                        <th class="text-left text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Nội dung</th>
+                                        <th class="text-left text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Điều kiện áp dụng</th>
+                                        <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Thời gian</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Trạng thái</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Nhân viên đăng bài</th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7"></th>
+                                        <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -35,11 +35,11 @@
                                             </td>
                                             <td class="align-middle text-center">
                                                 @if(strstr($value['image'],"https") == "")
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $value['image'] !!}.jpg"
                                                          alt="user1">
                                                 @else
-                                                    <img style="width: 300px"
+                                                    <img style="width: 100px"
                                                          src="{!! $value['image'] !!}" alt="user1">
                                                 @endif
                                             </td>
@@ -69,7 +69,7 @@
                                                 <span class="text-secondary font-weight-bold">{!! $value['users']['fullName'] !!}</span>
                                             </td>
                                             <td class="align-middle">
-                                                <a href="#editEvent" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+                                                <a href="#editEvent" class="text-success font-weight-bold text-xs" data-toggle="tooltip"
                                                    data-original-title="Edit event" data-bs-target="#editEvent{!! $value['id'] !!}"
                                                    data-bs-toggle="modal">
                                                     <i class="fa-solid fa-pen-to-square fa-lg"></i>
@@ -77,7 +77,7 @@
                                             </td>
                                             <td class="align-middle">
                                                 <a href="javascript:void(0)" data-url="{{ url('admin/events/delete', $value['id'] ) }}"
-                                                   class="text-secondary font-weight-bold text-xs delete-event" data-toggle="tooltip">
+                                                   class="text-danger font-weight-bold text-xs delete-event" data-toggle="tooltip">
                                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                                 </a>
                                             </td>
@@ -108,7 +108,7 @@
             $('.delete-event').on('click', function () {
                 var userURL = $(this).data('url');
                 var trObj = $(this);
-                if (confirm("Are you sure you want to remove it?") === true) {
+                if (confirm("Bạn có chắc chắn muốn xóa sự kiện này không?") === true) {
                     $.ajax({
                         url: userURL,
                         type: 'DELETE',

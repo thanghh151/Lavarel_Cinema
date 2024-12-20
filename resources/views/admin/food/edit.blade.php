@@ -13,19 +13,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.name')</label>
+                                    <label for="example-text-input" class="form-control-label">Tên đồ ăn</label>
                                     <input class="form-control" type="text" value="{!! $value['name'] !!}">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.price')</label>
+                                    <label for="example-text-input" class="form-control-label">Giá</label>
                                     <input class="form-control" type="number" value="{!! $value['price']!!}" name="price">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group file-uploader">
-                                    <label for="example-text-input" class="form-control-label">@lang('lang.image')</label>
+                                    <label for="example-text-input" class="form-control-label">Hình ảnh</label>
                                     <input type='file' name='Image' class="form-control image-food">
                                     <img style="width: 300px" src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $value['image'] !!}.jpg"
                                          class="img_food" alt="user1">
@@ -36,8 +36,8 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('lang.close')</button>
-                    <button type="submit" class="btn btn-primary">@lang('lang.save')</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-success">Lưu</button>
                 </div>
 
             </div>

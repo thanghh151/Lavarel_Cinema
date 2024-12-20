@@ -6,25 +6,24 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h6>@lang('lang.news')</h6>
+                    <h6>QUẢN LÝ TIN TỨC</h6>
+                    <a style="float:right;padding-right:30px;" class="text-light">
+                        <button class=" btn btn-success float-right mb-3" data-bs-toggle="modal" data-bs-target="#news">Thêm</button>
+                    </a>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
-                        <a style="float:right;padding-right:30px;" class="text-light">
-                            <button class=" btn btn-primary float-right mb-3" data-bs-toggle="modal" data-bs-target="#news">@lang('lang.create')</button>
-                        </a>
                         <table class="table align-items-center mb-0 ">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.title')</th>
-                                    <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.image')</th>
-                                    <th class="text-left text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.content')</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.status')</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.staff')</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.created_at')</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@lang('lang.updated_at')</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                                    <th class="text-uppercase text-dark text-center text-xxs font-weight-bolder opacity-7">Tiêu đề</th>
+                                    <th class="text-left text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Hình ảnh</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Nội dung</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Nhân viên tạo</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Ngày tạo</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7">Ngày cập nhật</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7"></th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-7"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,9 +34,9 @@
                                     </td>
                                     <td class="align-middle text-center">
                                         @if(strstr($value['image'],"https") == "")
-                                        <img style="width: 300px" src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $value['image'] !!}.jpg" alt="user1">
+                                        <img style="width: 100px" src="https://res.cloudinary.com/{!! $cloud_name !!}/image/upload/{!! $value['image'] !!}.jpg" alt="user1">
                                         @else
-                                        <img style="width: 300px" src="{!! $value['image'] !!}" alt="user1">
+                                        <img style="width: 100px" src="{!! $value['image'] !!}" alt="user1">
                                         @endif
                                     </td>
                                     <td class="align-middle text-center text-sm ">
@@ -67,12 +66,12 @@
                                         <span class="text-secondary font-weight-bold">{!! $value['updated_at'] !!}</span>
                                     </td>
                                     <td class="align-middle">
-                                        <a href="#editNews" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit news" data-bs-target="#editNews{!! $value['id'] !!}" data-bs-toggle="modal">
+                                        <a href="#editNews" class="text-success font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit news" data-bs-target="#editNews{!! $value['id'] !!}" data-bs-toggle="modal">
                                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                                         </a>
                                     </td>
                                     <td class="align-middle">
-                                        <a href="javascript:void(0)" data-url="{{ url('admin/news/delete', $value['id'] ) }}" class="text-secondary font-weight-bold text-xs delete-news" data-toggle="tooltip">
+                                        <a href="javascript:void(0)" data-url="{{ url('admin/news/delete', $value['id'] ) }}" class="text-danger font-weight-bold text-xs delete-news" data-toggle="tooltip">
                                             <i class="fa-solid fa-trash-can fa-lg"></i>
                                         </a>
                                     </td>
@@ -106,7 +105,7 @@
         $('.delete-news').on('click', function() {
             var userURL = $(this).data('url');
             var trObj = $(this);
-            if (confirm("Are you sure you want to remove it?") === true) {
+            if (confirm("Bạn có chắc chắn muốn xóa tin tức này?") === true) {
                 $.ajax({
                     url: userURL,
                     type: 'DELETE',
